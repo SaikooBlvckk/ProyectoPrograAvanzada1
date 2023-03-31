@@ -1,22 +1,12 @@
-public class Entrada {
-    private Evento evento;
+public class Entrada{
     private int precio;
     private String tipoEntrada;
     private int stock;
 
-    public Entrada(Evento evento, int precio, String tipoEntrada, int stock){
-        this.evento = evento;
+    public Entrada(int precio, String tipoEntrada, int stock){
         this.precio = precio;
         this.tipoEntrada = tipoEntrada;
         setStock(stock);
-    }
-
-    public Evento getEvento(){
-        return this.evento;
-    }
-
-    public void setEvento(Evento evento){
-        this.evento = evento;
     }
 
     public int getPrecio(){
@@ -24,12 +14,17 @@ public class Entrada {
     }
 
     public void setPrecio(int precio){
-        this.precio = precio;
+        if (precio >= 0)
+            this.precio = precio;
+        else{
+            System.out.println("No se puede asignar un numero negativo al precio");
+        }
     }
 
     public String getTipo(){
         return this.tipoEntrada;
     }
+
     public void setTipo(String tipoEntrada){
         this.tipoEntrada = tipoEntrada;
     }
@@ -45,6 +40,5 @@ public class Entrada {
             System.out.println("No se puede asignar un numero negativo de entradas");
         }
     }
-
 
 }

@@ -8,17 +8,17 @@ public class App {
         HashMap <String, Evento> ubicaciones  = new HashMap<>();
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < 2; i ++){
-            System.out.println("Nombre");
+            System.out.println("Nombre Evento");
             String nombre = sc.nextLine();
-            System.out.println("TipoEv");
+            System.out.println("Tipo Evento");
             String tipoEvento = sc.nextLine();
-            System.out.println("ubi");
+            System.out.println("Ubicacion Evento");
             String ubicacion = sc.nextLine();
-            System.out.println("TipoEn");
+            System.out.println("Tipo Entrada");
             String tipoEntrada = sc.nextLine();
-            System.out.println("Ciopre");
+            System.out.println("Precio Entrada");
             int precio = sc.nextInt();
-            System.out.println("Sto");
+            System.out.println("Stock de las entradas");
             int stock = sc.nextInt();
             Evento evento = new Evento(nombre,tipoEvento);
 
@@ -32,6 +32,7 @@ public class App {
         }
         
         for (int i = 0; i < 2; i++){
+            System.out.println("Seleccione la que quiere buscar");
             String ubicacion = sc.nextLine();
             imprimirEntradas(ubicacion, ubicaciones);
         }

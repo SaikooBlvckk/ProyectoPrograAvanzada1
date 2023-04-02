@@ -39,6 +39,5 @@ public class Evento {
             System.out.println("El tipo de entrada es: " + value.getTipo() + ", tiene un valor de: " + value.getPrecio() + " y quedan: " + value.getStock() + " entradas.");
         }
     }
-
     
 }

@@ -1,4 +1,5 @@
 public class Entrada{
+    
     private int precio;
     private String tipoEntrada;
     private int stock;

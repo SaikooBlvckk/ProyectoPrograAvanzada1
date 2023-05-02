@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Ventanas;
 
-import ProyectoEventos.*;
+import proyectoeventos.Productora;
 
+/**
+ *
+ * @author javii
+ */
+ 
 public class Inicio extends javax.swing.JFrame {
     private Productora productora;
     
@@ -23,7 +32,6 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btModificarE = new javax.swing.JButton();
         btCerrar = new javax.swing.JButton();
-        btSugerir = new javax.swing.JButton();
         btMostrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btAñadir = new javax.swing.JButton();
@@ -58,15 +66,6 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        btSugerir.setBackground(new java.awt.Color(153, 204, 255));
-        btSugerir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btSugerir.setText("Sugerir Evento");
-        btSugerir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSugerirActionPerformed(evt);
-            }
-        });
-
         btMostrar.setBackground(new java.awt.Color(153, 204, 255));
         btMostrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btMostrar.setText("Mostrar Eventos");
@@ -90,7 +89,7 @@ public class Inicio extends javax.swing.JFrame {
 
         btEliminar.setBackground(new java.awt.Color(153, 204, 255));
         btEliminar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btEliminar.setText("Eliminar Entrada");
+        btEliminar.setText("Eliminar Evento");
         btEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEliminarActionPerformed(evt);
@@ -105,7 +104,6 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(90, 90, 90)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(btMostrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btSugerir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btModificarE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAñadir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -123,15 +121,13 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(39, 39, 39)
                 .addComponent(btMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btSugerir, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btModificarE, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(btCerrar)
                 .addGap(12, 12, 12))
         );
@@ -159,12 +155,6 @@ public class Inicio extends javax.swing.JFrame {
         avanza.setVisible(true);
         this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btModificarEActionPerformed
-
-    private void btSugerirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSugerirActionPerformed
-        SugerirE avanza = new SugerirE(productora);
-        avanza.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btSugerirActionPerformed
 
     private void btMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMostrarActionPerformed
         MostrarE avanza = new MostrarE(productora);
@@ -200,7 +190,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton btModificarE;
     private javax.swing.JButton btMostrar;
     private javax.swing.JButton btMostrarE;
-    private javax.swing.JButton btSugerir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

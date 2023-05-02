@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Ventanas;
 
-import ProyectoEventos.*;
+import proyectoeventos.Eventos;
+import proyectoeventos.Productora;
 
+/**
+ *
+ * @author javii
+ */
 public class ModFecha extends javax.swing.JFrame {
 
     /**
@@ -67,6 +76,12 @@ public class ModFecha extends javax.swing.JFrame {
         btMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btModActionPerformed(evt);
+            }
+        });
+
+        jModificado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jModificadoActionPerformed(evt);
             }
         });
 
@@ -151,9 +166,17 @@ public class ModFecha extends javax.swing.JFrame {
     }//GEN-LAST:event_jNombreActionPerformed
 
     private void btModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModActionPerformed
-        // TODO add your handling code here:
+        Eventos evento = productora.obtenerEvento(jNombre.getText());
+        evento.setFecha(jFecha.getText());
+        //HACER QUE MUESTRE EL NUEVO EVENTO
+        //productora.obtenerEvento(jNombre.getText());
         //HACER QUE GUARDE EL ARCHIVO MODIFICADO.
     }//GEN-LAST:event_btModActionPerformed
+
+    private void jModificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModificadoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jModificadoActionPerformed
 
     /**
      * @param args the command line arguments

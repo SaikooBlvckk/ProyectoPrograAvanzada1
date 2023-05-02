@@ -1,7 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Ventanas;
 
-import ProyectoEventos.*;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import proyectoeventos.BaseDeDatos;
+import proyectoeventos.Productora;
 
+/**
+ *
+ * @author javii
+ */
 public class Carga extends javax.swing.JFrame {
 
     /**
@@ -97,8 +108,15 @@ public class Carga extends javax.swing.JFrame {
 
     private void btCargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCargaActionPerformed
         Inicio avanza = new Inicio(productora);
+        BaseDeDatos bd = new BaseDeDatos();
         avanza.setVisible(true);
+        try {
+            bd.cargar();
+        }catch(IOException e) {
+          JOptionPane.showMessageDialog(null, "Ocurrió un error de IO: " + e.getMessage(), "Error de IO", JOptionPane.ERROR_MESSAGE);  
+        }
         this.dispose();
+        //BaseDeDatos.cargar();
         
     }//GEN-LAST:event_btCargaActionPerformed
 

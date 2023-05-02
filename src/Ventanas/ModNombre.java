@@ -1,7 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Ventanas;
 
-import ProyectoEventos.*;
+import proyectoeventos.Eventos;
+import proyectoeventos.Productora;
 
+/**
+ *
+ * @author javii
+ */
 public class ModNombre extends javax.swing.JFrame {
 
     /**
@@ -155,8 +164,12 @@ public class ModNombre extends javax.swing.JFrame {
     }//GEN-LAST:event_jModificadoActionPerformed
 
     private void btModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModActionPerformed
-        // TODO add your handling code here:
-        //HACER QUE GUARDE EL ARCHIVO NUEVO.
+        
+        Eventos evento = productora.obtenerEvento(jNombre.getText());
+        evento.setNombre(jNuevoN.getText());
+        //HACER QUE MUESTRE EL NUEVO EVENTO
+        //productora.obtenerEvento(jNombre.getText());
+        //HACER QUE GUARDE EL ARCHIVO MODIFICADO.
     }//GEN-LAST:event_btModActionPerformed
 
     /**

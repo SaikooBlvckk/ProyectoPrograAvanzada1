@@ -1,58 +1,67 @@
-package ProyectoEventos;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package proyectoeventos;
 
-import java.util.HashMap;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
+/**
+ *
+ * @author javii
+ */
 public class Productora {
-    private HashMap<String, Evento> eventos;
+    private HashMap<String, Eventos> evento;
 
     public Productora() {
-        eventos = new HashMap<String, Evento>();
+        evento = new HashMap();
     }
-
-    public boolean agregarEvento(Evento evento) {
-        if (!eventos.containsKey(evento.getNombre())) {
-            eventos.put(evento.getNombre(), evento);
+    
+    public boolean agregarEvento(Eventos eventos){
+        if (!evento.containsKey(eventos.getNombre())) {
+            evento.put(eventos.getNombre(), eventos);
             return true;
         } else {
             return false;
         }
     }
-
-    public Evento obtenerEvento(String nombre) {
-        return eventos.get(nombre);
+    
+    public Eventos obtenerEvento(String nombre) {
+        return evento.get(nombre);
     }
-
-    public boolean eliminarEvento(String nombre) {
-        if (eventos.containsKey(nombre)) {
-            eventos.remove(nombre);
-            return true;
-        } else {
-            return false;
-        }
+    
+    public void modificarEvento(String nombre, Eventos eventoNuevo) {
+        evento.put(nombre, eventoNuevo);
     }
-
-    public void modificarEvento(String nombreAntiguo, Evento eventoNuevo) {
-        eventos.put(nombreAntiguo, eventoNuevo);
-    }
-
-    public void mostrarEventos() {
-        for (HashMap.Entry<String, Evento> entry : eventos.entrySet()) {
+    
+    public void mostrarEventos(){
+        for (HashMap.Entry<String, Eventos> entry : evento.entrySet()) {
             System.out.println("Evento: " + entry.getValue().getNombre());
             System.out.println("Fecha: " + entry.getValue().getFecha());
             System.out.println("Stock: " + entry.getValue().getStock());
             System.out.println("Area " + entry.getValue().getArea());
-            for (Entrada entrada : entry.getValue().getEntradas()) {
+            for (Entradas entrada : entry.getValue().getEntradas()) {
                 System.out.println(" - " + entrada.getTipo() + ": " + entrada.getPrecio());
             }
         }
-    } 
-
-    public ArrayList<Evento> filtrarEventosPorFecha(LocalDate fechaInicio, LocalDate fechaFin) {
-        ArrayList<Evento> eventosFiltrados = new ArrayList<>();
+    }
     
-        for (Evento evento : eventos.values()) {
+    public boolean eliminarEvento(String nombre) {
+        if (evento.containsKey(nombre)) {
+            evento.remove(nombre);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    //IMPLEMENTAR ESTE O IMPLEMENTAR FUNCION SUGERIR
+    public ArrayList<Eventos> filtrarEventosPorFecha(LocalDate fechaInicio, LocalDate fechaFin) {
+        ArrayList<Eventos> eventosFiltrados = new ArrayList<>();
+    
+        for (Eventos evento : evento.values()) {
             LocalDate fechaEvento = LocalDate.parse(evento.getFecha());
     
             if (fechaEvento.isEqual(fechaInicio) || fechaEvento.isEqual(fechaFin) ||
@@ -63,18 +72,11 @@ public class Productora {
         return eventosFiltrados;
     }
 
-    public Entrada buscarTipoEntrada(String nombreEvento, String tipo) {
-        Evento evento = eventos.get(nombreEvento);
-        if (evento != null) {
-            for (Entrada tipoEntrada : evento.getEntradas()) {
-                if (tipoEntrada.getTipo().equals(tipo)) {
-                    return tipoEntrada;
-                }
-            }
-        }
-        return null;
+    public HashMap<String, Eventos> getEvento() {
+        return evento;
     }
 
-    // Funcion que te recomienda la entrada
+    public void setEvento(HashMap<String, Eventos> evento) {
+        this.evento = evento;
+    }  
 }
-

@@ -6,7 +6,6 @@ public class Evento {
     private String fecha;
     private int stock;
     private String area;
-    //private String tipoE;
     private ArrayList<Entrada> entradas;
 
     public Evento(String nombre, String fecha, int stock, String area) {
@@ -58,14 +57,6 @@ public class Evento {
         this.area = area;
     }
 
-    /***public String getTipoE() {
-        return tipoE;
-    }
-
-    public void setTipoE(String tipoE) {
-        this.tipoE = tipoE;
-    }***/
-
     public ArrayList<Entrada> getEntradas() {
         return this.entradas;
     }
@@ -73,10 +64,5 @@ public class Evento {
     public void addEntradas(Entrada entrada) {
         this.entradas.add(entrada);
     }
-
-    
-
-    
-    
     
 }

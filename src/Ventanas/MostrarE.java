@@ -132,9 +132,7 @@ public class MostrarE extends javax.swing.JFrame {
     }//GEN-LAST:event_btCerrarActionPerformed
 
     private void btMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMostrarActionPerformed
-        //Productora mostrar = new Productora();
-        
-        //productora.mostrarEventos();
+        productora.mostrarEventos();
     }//GEN-LAST:event_btMostrarActionPerformed
 
     /**

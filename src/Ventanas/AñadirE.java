@@ -180,10 +180,9 @@ public class AñadirE extends javax.swing.JFrame {
 
     private void btAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAñadirActionPerformed
         int stock = Integer.parseInt(jStock.getText());
-        
-        
-        //Entradas[] nuevEntrada = new Entradas[];
-        //HACER QUE GUARDE EL NUEVO ARCHIVO.
+        Evento evento = new Evento(jNombre.getText(), jFecha.getText(), stock, jArea.getText());
+        productora.agregarEvento(evento);
+
         
     }//GEN-LAST:event_btAñadirActionPerformed
 

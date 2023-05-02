@@ -37,9 +37,17 @@ public class Productora {
         eventos.put(nombreAntiguo, eventoNuevo);
     }
 
-    public Evento mostrarEventos(String nombre){
-        return (Evento)eventos.get(nombre);
-    }
+    public void mostrarEventos() {
+        for (HashMap.Entry<String, Evento> entry : eventos.entrySet()) {
+            System.out.println("Evento: " + entry.getValue().getNombre());
+            System.out.println("Fecha: " + entry.getValue().getFecha());
+            System.out.println("Stock: " + entry.getValue().getStock());
+            System.out.println("Area " + entry.getValue().getArea());
+            for (Entrada entrada : entry.getValue().getEntradas()) {
+                System.out.println(" - " + entrada.getTipo() + ": " + entrada.getPrecio());
+            }
+        }
+    } 
 
     public ArrayList<Evento> filtrarEventosPorFecha(LocalDate fechaInicio, LocalDate fechaFin) {
         ArrayList<Evento> eventosFiltrados = new ArrayList<>();
@@ -53,6 +61,18 @@ public class Productora {
             }
         }
         return eventosFiltrados;
+    }
+
+    public Entrada buscarTipoEntrada(String nombreEvento, String tipo) {
+        Evento evento = eventos.get(nombreEvento);
+        if (evento != null) {
+            for (Entrada tipoEntrada : evento.getEntradas()) {
+                if (tipoEntrada.getTipo().equals(tipo)) {
+                    return tipoEntrada;
+                }
+            }
+        }
+        return null;
     }
 
     // Funcion que te recomienda la entrada

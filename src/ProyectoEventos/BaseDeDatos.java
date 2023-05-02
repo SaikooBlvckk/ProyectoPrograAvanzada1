@@ -8,13 +8,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BaseDeDatos {
-    /***
     private String nombreArchivo;
-    private HashMap<String, Eventos> eventos;
+    private HashMap<String, Evento> eventos;
 
     public BaseDeDatos(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
-        eventos = new HashMap();
+        this.eventos = new HashMap<>();
     }
 
     public void cargar() throws IOException {
@@ -27,8 +26,7 @@ public class BaseDeDatos {
             String fecha = datos[1];
             int stock = Integer.parseInt(datos[2]);
             String tipo = datos[3];
-            String entradas = datos[4];  //ARRAY 
-            Eventos evento = new Eventos(nombre, fecha, stock, tipo, entradas); //NO SE COMO SE AÑADE
+            Evento evento = new Evento(nombre, fecha, stock, tipo);
             eventos.put(evento.getNombre(),evento);
         }
         scanner.close();
@@ -36,22 +34,23 @@ public class BaseDeDatos {
 
     public void grabar() throws IOException {
         FileWriter writer = new FileWriter(nombreArchivo);
-        for (Eventos evento : eventos) { //HASHMAP NO ARRAY
+        for (HashMap.Entry<String, Evento> entry : eventos.entrySet()) { // Iterando sobre HashMap
+            Evento evento = entry.getValue();
             String linea = evento.getNombre() + "," + evento.getFecha() + "," + evento.getStock() + ","
-                    + evento.getTipoE() + "," + evento.getEntradas() + "\n";
+                    + evento.getEntradas() + "\n";
             writer.write(linea);
         }
         writer.close();
     }
+    
 
-    public void agregarEvento(Eventos evento) {
+    public void agregarEvento(Evento evento) {
         eventos.put(evento.getNombre(),evento);
     }
 
-    public HashMap<String,Eventos> getEventos() {
+    public HashMap<String,Evento> getEventos() {
         return eventos;
     }
-    ***/
 }
 
 

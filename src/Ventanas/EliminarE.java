@@ -131,12 +131,7 @@ public class EliminarE extends javax.swing.JFrame {
     }//GEN-LAST:event_btCerrarActionPerformed
 
     private void btEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEliminarActionPerformed
-        Evento evento = productora.mostrarEventos(jNombre.getText());
-        if(evento!=null){
-            productora.eliminarEvento(jNombre.getText());
-            System.out.println("Evento eliminado.");
-            
-        }
+        
         //HACER QUE GUARDE EL ARCHIVO MODIFICADO.
     }//GEN-LAST:event_btEliminarActionPerformed
 
